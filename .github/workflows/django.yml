@@ -18,11 +18,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd xrwm-fullstack_developer_capstone/server
+        cd car-dealership-capstone/xrwm-fullstack_developer_capstone/server
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Run Django check
       run: |
-        cd xrwm-fullstack_developer_capstone/server
+        cd car-dealership-capstone/xrwm-fullstack_developer_capstone/server
         python manage.py check
