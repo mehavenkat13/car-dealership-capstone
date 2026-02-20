@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: xrwm-fullstack_developer_capstone/server
+
     steps:
     - uses: actions/checkout@v3
 
@@ -18,11 +22,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd xrwm-fullstack_developer_capstone/server
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Run Django check
-      run: |
-        cd xrwm-fullstack_developer_capstone/server
-        python manage.py check
+      run: python manage.py check
