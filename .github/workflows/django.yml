@@ -16,11 +16,13 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: List project files (debug)
-      run: ls -R
+    - name: Install dependencies
+      run: |
+        cd xrwm-fullstack_developer_capstone/server
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Run Django check
       run: |
-        cd xrwm-fullstack_developer_capstone
-        cd server
+        cd xrwm-fullstack_developer_capstone/server
         python manage.py check
