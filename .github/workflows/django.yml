@@ -16,7 +16,11 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Run Django checks
+    - name: List project files (debug)
+      run: ls -R
+
+    - name: Run Django check
       run: |
-        cd xrwm-fullstack_developer_capstone/server
+        cd xrwm-fullstack_developer_capstone
+        cd server
         python manage.py check
